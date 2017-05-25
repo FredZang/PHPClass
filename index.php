@@ -17,6 +17,7 @@
             }            
         }
     }
+    include "mail.php";
     
 	$c_name = "Home_Controller";
 	$action = "index";

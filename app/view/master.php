@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<base href="http://localhost/OOP18-2/">
+	<base href="http://localhost/PHPClass/">
 	<meta charset="UTF-8">
 	<title>PHP</title>
 	<link rel="stylesheet" href="css/style.css">

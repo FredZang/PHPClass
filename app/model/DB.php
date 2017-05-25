@@ -24,6 +24,10 @@ abstract class DB
 		{
 			return mysqli_num_rows($resource);
 		}
+		function last_insert_id()
+		{
+			return mysqli_insert_id($this->conn);	
+		}
 		function toArray($resource){
 			
 			$result = [];

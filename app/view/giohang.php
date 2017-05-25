@@ -45,9 +45,59 @@
 		$stt++;
 	} ?>
 	<tr><td style="text-align: right;" colspan="6">Tổng tiền : <?php echo $tongtien; ?></td></tr>
-	
-
 </table>
 
-
+<form action="index.php?c_name=Giohang_Controller&action=checkout" method="post">
+	<table>
+		<tr>
+			<td>Tên khách hàng :</td>
+			<td>
+				<input type="text" name="name">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Phone :
+			</td>
+			<td><input type="text" name="phone"></td>
+		</tr>
+		<tr>
+			<td>
+				Địa chỉ :
+			</td>
+			<td>
+				<input type="text" name="address">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Ghi chú : 
+			</td>
+			<td>
+				<textarea name="note">
+					
+				</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" name="btn_Checkout" value="Thanh toán">
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" name="tongtien" value="<?=$tongtien?>">
+</form>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
