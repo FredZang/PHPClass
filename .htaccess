@@ -7,11 +7,13 @@ RewriteRule ^css/$ - [L]
 RewriteRule ^index.html$ - [L]
 RewriteRule ^images/$ - [L]
 
+RewriteRule ^khachhang/(.*)$ index.php?c_name=KhachHang_Controller&action=$1 [L]
+
 RewriteRule ^gio-hang/$ index.php?c_name=GioHang_Controller [L]
 
-RewriteRule ^(.*)/$ index.php?c_name=Loai_Controller&TieuDeKD=$1 
+RewriteRule ^(.*)/$ index.php?c_name=Loai_Controller&TieuDeKD=$1 [L]
 
-RewriteRule ^(.*)/(.*).html$ ?c_name=SanPham_Controller&TieuDeKD=$2
+RewriteRule ^(.*)/(.*).html$ ?c_name=SanPham_Controller&TieuDeKD=$2 [L]
 
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
