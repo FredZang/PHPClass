@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<base href="http://localhost/PHPClass/">
 	<meta charset="UTF-8">
 	<title>PHP</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="<?=$_SESSION['base']?>css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;subset=latin-ext" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-  <script src="css/jquery-3.1.0.min.js"></script>
+  <link rel="stylesheet" href="<?=$_SESSION['base']?>bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script src="<?=$_SESSION['base']?>css/jquery-3.1.0.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="<?=$_SESSION['base']?>bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
  <!--  //githut -->
 	<!-- <link href="ihover-gh-pages/src/ihover.css" rel="stylesheet"> -->
 </head>
@@ -36,8 +37,29 @@
      					<li><a href="">Account</a></li>
   				 		<li><a href="">Wishlist</a></li>
   				 		<li><a href="">Checkout</a></li>
-  				 		<li><a href="">Log in</a></li>
-  				 		<li><a href="" style="border: none;">Sign Up</a></li>
+  				 		<li>
+
+  				 		<?php if(isset($_SESSION['user_login']))
+  				 			{
+  				 			?>
+  				 			
+  				 				Chào <?=$_SESSION['user_name_login']?>
+  				 			<a href="khachhang/dangxuat">
+  				 				- Đăng xuất
+  				 			</a>
+  				 			
+  				 			<?php
+  				 			}else{
+  				 				?>
+								<a href="khachhang/dangnhap">
+  				 					Log in
+  				 				</a>
+  				 		</li>
+  				 		<li><a href="khachhang/dangky" style="border: none;">Sign Up</a></li>
+  				 		<?php
+  				 			}
+
+  				 			?>
   				  </ul>
   				 
   				 </div>

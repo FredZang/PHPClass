@@ -77,9 +77,67 @@
 
 			$this->loadView("kichhoat",$data);
 		}
+		function dangxuat(){
+			
+			unset($_SESSION["user_login"]);
+			unset($_SESSION["user_name_login"]);
+			
+			header("location:".$_SESSION['base']."index.php");
+		}
+		function dangnhap(){
+
+			if(isset($_POST['btn_dangnhap'])){
+
+				foreach ($_POST as $key => $value) {
+					$$key = $value;
+				}
+				$pass = md5($pass);
+				$sql = "select * from KhachHang where email = '$email' and pass='$pass'";
+
+				$KhachHang = new KhachHang();
+
+				$kq = $KhachHang->query($sql);
+				$dem_du_lieu = $KhachHang->num_rows($kq);
+
+				if($dem_du_lieu==1)
+				{
+					//Đăng nhập thành công
+					$user = $KhachHang->result_once($sql);
+					$_SESSION["user_login"]=$user['idKH'];
+					$_SESSION["user_name_login"]=$user['TenKH'];
+					
+					$data['thongbao']="Login thành công";
+
+					header("location:".$_SESSION['base']."index.php");
+
+				}else
+				{
+					$data['thongbao']="Login thất bại, Sai mật khẩu hoặc tài khoản";
+				}
+			}
+
+			$this->loadView("dangnhap",$data);	
+		}
 	}
 
+
  ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

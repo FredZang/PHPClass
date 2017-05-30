@@ -10,6 +10,13 @@ class Controller{
 		$banner = new banner();
 		$list_banner = $banner->getList();
 
+		if($data){
+			foreach ($data as $key => $value) {
+					$$key = $value;
+				}	
+		}
+		
+
 		include "app/view/master.php";
 	}
 

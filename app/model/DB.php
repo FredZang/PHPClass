@@ -62,5 +62,6 @@ abstract class DB
 			$kq = $this->result_once($sql);
 			return $kq[$this->primaryKey];
 		}
+		
 }
 ?>

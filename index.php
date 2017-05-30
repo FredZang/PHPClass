@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    $_SESSION['base'] = 'http://localhost/PHPClass/';
 	function __autoload($class_name) 
     {
         //class directories
